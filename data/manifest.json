@@ -1,5 +1,5 @@
 {
-  "bank_version": "0.2",
+  "bank_version": "0.3",
   "batches": [
     { "file": "batches/D1_1.json", "domain": 1, "count": 10, "added_in": "0.1" },
     { "file": "batches/D2_1.json", "domain": 2, "count": 10, "added_in": "0.1" },
@@ -16,6 +16,14 @@
     { "file": "batches/D5_2.json", "domain": 5, "count": 22, "added_in": "0.2" },
     { "file": "batches/D6_2.json", "domain": 6, "count": 20, "added_in": "0.2" },
     { "file": "batches/D7_2.json", "domain": 7, "count": 22, "added_in": "0.2" },
-    { "file": "batches/D8_2.json", "domain": 8, "count": 15, "added_in": "0.2" }
+    { "file": "batches/D8_2.json", "domain": 8, "count": 15, "added_in": "0.2" },
+    { "file": "batches/D1_3.json", "domain": 1, "count": 40, "added_in": "0.3" },
+    { "file": "batches/D2_3.json", "domain": 2, "count": 25, "added_in": "0.3" },
+    { "file": "batches/D3_3.json", "domain": 3, "count": 32, "added_in": "0.3" },
+    { "file": "batches/D4_3.json", "domain": 4, "count": 32, "added_in": "0.3" },
+    { "file": "batches/D5_3.json", "domain": 5, "count": 33, "added_in": "0.3" },
+    { "file": "batches/D6_3.json", "domain": 6, "count": 30, "added_in": "0.3" },
+    { "file": "batches/D7_3.json", "domain": 7, "count": 33, "added_in": "0.3" },
+    { "file": "batches/D8_3.json", "domain": 8, "count": 25, "added_in": "0.3" }
   ]
 }
