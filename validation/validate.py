@@ -31,6 +31,7 @@ DUP_THRESHOLD = 0.85
 LETTER_MIN_BANK = 200
 LETTER_RANGE = (0.20, 0.30)
 LENGTH_BIAS_MAX = 0.35
+LENGTH_BIAS_MIN = 0.15
 MAX_BATCH = 50
 
 BANNED_OPTION = re.compile(r"\b(all|none|both|neither) of (the )?(above|these|the following)\b", re.I)
@@ -248,6 +249,11 @@ def check_distribution(result: Result, taxonomy: dict) -> None:
         result.warnings.append(
             f"correct answer is the longest option in {total[0] / total[2]:.1%} of questions (limit {LENGTH_BIAS_MAX:.0%})"
         )
+    if total[2] >= LETTER_MIN_BANK and total[0] / total[2] < LENGTH_BIAS_MIN:
+        result.warnings.append(
+            f"correct answer is the longest option in only {total[0] / total[2]:.1%} of questions; "
+            f"below {LENGTH_BIAS_MIN:.0%} teaches test-takers to rule out the longest option"
+        )
 
     domains = taxonomy.get("domains", {})
     grid = {d: {"difficulty": Counter(), "type": Counter(), "subtopics": Counter()} for d in domains}
@@ -358,7 +364,7 @@ def render_report(result: Result, taxonomy: dict) -> str:
     out += [
         "## Length bias",
         "",
-        f"Correct answer is the longest option (ties count) in {o[0]}/{o[2]} questions ({pct(o[0], o[2])}); limit {LENGTH_BIAS_MAX:.0%}.",
+        f"Correct answer is the longest option (ties count) in {o[0]}/{o[2]} questions ({pct(o[0], o[2])}); warning above {LENGTH_BIAS_MAX:.0%}, and below {LENGTH_BIAS_MIN:.0%} once the bank has {LETTER_MIN_BANK} questions.",
         f"Correct answer is the shortest option in {o[1]}/{o[2]} ({pct(o[1], o[2])}).",
         "",
         "| Domain | Longest | Shortest |",
