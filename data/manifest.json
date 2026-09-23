@@ -1,0 +1,13 @@
+{
+  "bank_version": "0.1",
+  "batches": [
+    { "file": "batches/D1_1.json", "domain": 1, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D2_1.json", "domain": 2, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D3_1.json", "domain": 3, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D4_1.json", "domain": 4, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D5_1.json", "domain": 5, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D6_1.json", "domain": 6, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D7_1.json", "domain": 7, "count": 10, "added_in": "0.1" },
+    { "file": "batches/D8_1.json", "domain": 8, "count": 10, "added_in": "0.1" }
+  ]
+}
